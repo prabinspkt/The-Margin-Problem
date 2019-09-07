@@ -1,13 +1,4 @@
 def makeMargin(input_file, left_margin, right_margin):
-    # Check if the margins are right.
-    if left_margin < 0 or right_margin < 0:
-        print("Please enter positive margins.")
-        return
-    # Apply margins in the file only if the least available space is 15.
-    if ((80 - left_margin - right_margin) < 15):
-        print("Please decrease your margins.")
-        return
-
     f = open(input_file, 'r')
     words = []
     for line in f:
@@ -65,3 +56,27 @@ def makeMargin(input_file, left_margin, right_margin):
             of.write('\n')
             # word_index is not incresed as no word is written because of less char spaces available
     of.close()
+
+def main():
+    input_file = input("Enter the input file name: ")
+    left_margin = int(input("Enter the left margin: "))
+    right_margin = int(input("Enter the right margin: "))
+
+    # Check a non-empty file name are provided
+    if (not input_file):
+        print("Please enter non-empty values.")
+        return
+
+    # Check if the margins are right.
+    if left_margin < 0 or right_margin < 0:
+        print("Please enter positive margins.")
+        return
+    # Apply margins in the file only if the least available space is 15.
+    if ((80 - left_margin - right_margin) < 15):
+        print("Please decrease your margins.")
+        return
+
+    makeMargin(input_file, left_margin, right_margin)
+
+if __name__ == "__main__":
+    main()
