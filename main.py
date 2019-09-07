@@ -57,6 +57,9 @@ def makeMargin(input_file, left_margin, right_margin):
             # word_index is not incresed as no word is written because of less char spaces available
     of.close()
 
+    # Print the output file.
+    print(open("DAT1.TXT", 'r').read())
+
 def main():
     input_file = input("Enter the input file name: ")
     left_margin = int(input("Enter the left margin: "))
