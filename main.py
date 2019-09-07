@@ -8,7 +8,7 @@ def makeMargin(input_file, left_margin, right_margin):
     words = [word for word in words if word != '']
     
     # Open output file
-    of = open("output_file.txt", 'w')
+    of = open("DAT1.TXT", 'w')
 
     # written_char counts the number of chars written in that line. The total can be 80 including the margins.
     #NOTE: written_char also includes the left_margin already when a line is first written
