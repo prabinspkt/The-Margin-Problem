@@ -29,9 +29,9 @@ def makeMargin(input_file, left_margin, right_margin):
             if word[-1] == '.':
                 # Add if else statements to write two spaces only if two char space is available in the line
                 if (1 == (80 - written_char - right_margin - len(word))):
-                    of.write('')
+                    of.write(' ')
                     written_char += 1
-                else: # when only one char space is available
+                else: # when only two char space is available
                     of.write('  ')
                     written_char += 2
             elif word[-1] == '\n':

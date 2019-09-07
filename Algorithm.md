@@ -1,0 +1,40 @@
+## Main function
+    - Ask for input_file name, left_margin, and right_margin from the user.
+    - Check for non-empty input_file name and non-negative left_margin and right_margin.
+    - Call makeMargin function with checked user supplied arguments.
+
+## makeMargin function
+    - Open input_file in 'read' mode.
+    - Create a list of all the words in the file.
+    - Remove any empty string item from the list. 
+    - Open DAT1.TXT file to write the output in.
+    - Initialize variable written_char which will have the count of number of characters written in that line.
+    - Initialize word_count variable which will point to the word to be written in the file.
+    - While written_char <= 80 and word_index < len(words)
+        - Get the word to write.
+        - If written_char is 0, nothing has been written in the line, so,
+            - Write the left_margin.
+            - Increment written_char.
+        - If availble spaces more than word length:
+            - Write word.
+            - Increment written_char.
+            -If last char written is a period:
+                - If two char spaces available:
+                    - Write two spaces.
+                - Else (Only one char space is available.):
+                    - Write one space.
+            - Else if last char written is new line char:
+                - Update the value of written_char to 0 as a new line has to be written.
+            - Else:
+                - Write a space.
+            - Increment the word_count as next word has to be written.
+        - Else if available spaces exactly equal to lenth of word to be written:
+            - Write the word.
+            - Increment word_count as next word has to be written in next iteration.
+            - Write the right_margin.
+            - Write a new line char.
+            - Update written_char to 0 as new line will be started next.
+        - Else if available spaces is less than the current word length:
+            - Write space char in the remaining spaces and write right_margin.
+            - Write a new line char.
+        - Close output file.
